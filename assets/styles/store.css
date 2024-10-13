@@ -1,0 +1,195 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat:wght@400;600&display=swap');
+
+/* Variáveis Globais */
+:root {
+    --font-primary: 'Krona One', sans-serif;
+    --font-secondary: 'Montserrat', sans-serif;
+
+    --color-primary: #467548;
+    --color-background: rgb(26, 22, 17);
+    --color-text: #a8a7a6;
+    --color-highlight: black;
+    --color-button: #496a9c;
+    --color-button-text: #FFFFFF;
+}
+
+/* Reset de Estilos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-primary);
+    background-color: var(--color-background);
+    color: var(--color-text);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+h1, h2, h3 {
+    font-family: var(--font-primary);
+}
+
+h2.titulo {
+    color: var(--color-primary);
+    text-align: center;
+    padding: 20px;
+}
+
+header {
+    background-color: var(--color-primary);
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu_list ul {
+    display: flex;
+    list-style: none;
+}
+
+.nav-item {
+    margin: 0 20px;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.login-button button {
+    background-color: var(--color-button);
+    color: var(--color-button-text);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.main {
+    flex-grow: 1;
+}
+
+.catalogo {
+    padding: 40px 4%;
+}
+
+.produtos {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.produto {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    flex: 1;
+}
+
+.produto img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+.produto h3 {
+    font-size: 1.5rem;
+    margin: 10px 0;
+}
+
+.produto p {
+    font-size: 1.25rem;
+    color: var(--color-primary);
+}
+
+.add-to-cart {
+    background-color: var(--color-button);
+    color: var(--color-button-text);
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.remove-from-cart {
+    background-color: var(--color-button);
+    color: var(--color-button-text);
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+.finalizar-compra {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.resumo-compra {
+    margin-top: 20px;
+}
+
+.finalizar-button {
+    background-color: var(--color-button);
+    color: var(--color-button-text);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+footer {
+    background-color: var(--color-primary);
+    color: var(--color-button-text);
+    text-align: center;
+    padding: 10px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .produtos {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .header_menu {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .menu_list ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .login-button {
+        margin-top: 10px;
+    }
+}
+
+/* Estilo para as imagens da loja (store) */
+.store img {
+    width: 300px;  /* Define uma largura fixa para as imagens */
+    height: 300px; /* Define uma altura fixa para as imagens */
+    object-fit: cover; /* Garante que as imagens se ajustem sem distorção */
+    object-position: center; /* Centraliza a imagem dentro do container */
+    border-radius: 5px; /* Adiciona cantos arredondados (opcional) */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adiciona uma leve sombra para destacar as imagens */
+  }
+  
+  /* Para telas menores, ajusta o tamanho das imagens */
+  @media (max-width: 768px) {
+    .store img {
+      width: 100%; /* Em telas menores, as imagens ocupam toda a largura disponível */
+      height: auto; /* Remove a altura fixa para manter a proporção */
+    }
+  }

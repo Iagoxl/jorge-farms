@@ -1,0 +1,355 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat:wght@400;600&display=swap');
+
+/*General style for maintenance*/
+
+:root{
+    --font-primary: 'Krona One', sans-serif;
+    --font-segundery: 'Montserrat', sans-serif;
+
+    --color-menu: #193940;
+    --color-main: #DCD7C9;
+    --color-reader: #1b1918;
+    --color-back-destaque: black;
+
+    --color-font-reader: #bac8d9;
+    --color-font-primary-main: #64b8b8;
+
+    --color-font-destaque: #c7e0c8;
+    --color-font-sec-destaque: white;
+
+    --color-icon-destaque: white;
+
+    --color-shadow-header: #101d20;
+
+    --color-font-nav: #5d645e;
+
+    --color-button-menu: #659cee;
+    --color-button-login: #587a47;
+    --color-font-button-menu: #c6c9ce;
+}
+/*Final General style for maintenance*/
+
+/*Stile General*/
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font-primary);
+}
+
+h2.titulo{
+    color: var(--color-font-destaque);
+    font-size: 43px;
+    text-align: center;
+    padding: 55px;
+}
+
+header {
+    background-color: var(--color-menu);
+    box-shadow: 0px 3px 10px var(--color-shadow-header);
+}
+
+.interface{
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+body {
+    height: 100vh;
+}
+
+.flex {
+    display: flex;
+}
+
+/*Final General*/
+
+/*Stile Header*/
+
+.header_menu{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:  1.5rem 6rem;
+}
+
+.logo{
+    display: flex;
+    align-items: center;    
+}
+
+.menu_list {
+    display: flex;
+    align-items: center;
+}
+
+.menu_list ul {
+    list-style: none;
+}
+
+.nav-item {
+    justify-content: center;
+    padding: 0px 40px;
+    display: inline-block;
+}
+
+.nav-item :hover{
+    color: var(--color-main);
+    text-transform: uppercase;
+    transition-duration: 0.5s;
+}
+
+.nav-link {
+    text-decoration: none;
+    font-size: 1.15rem;
+    color: var(--color-font-nav);
+    font-weight: 400;
+}
+
+.login-button button{
+    border: none;
+    background-color: var(--color-button-login);
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+
+.login-button :hover {
+    text-transform: uppercase;
+    transition-duration: 0.4s;
+}
+
+.login-button a {
+    text-decoration: none;
+    color: var(--color-font-button-menu);
+    font-weight: 500;
+    font-size: 1.0rem;
+}
+
+.mobile-menu-icon {
+    display: none;
+}
+
+.mobile-menu {
+    display: none;
+}
+
+.openMenu {
+    border: none;
+    background: none;
+    font-size: 30px;
+    font-weight: bold;
+    padding: 0px 5px 0px 5px;
+    cursor: pointer;
+}
+
+/*Stile Mobile*/
+
+@media screen and (max-width: 730px) {
+    .header_menu {
+        padding: 1.5rem 4rem;
+    }
+    
+    .nav-item {
+        display: none;
+    }
+
+    .login-button {
+        display: none;    
+    }
+
+    .mobile-menu-icon {
+        display: block;
+    }
+
+    .mobile-menu-icon button {
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+    }
+
+    .mobile-menu ul {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        padding-bottom: 1rem;
+    }
+
+    .mobile-menu .nav-item{
+        display: block;
+        padding-top: 1.2rem;
+    }
+    
+    .mobile-menu .login-button {
+        display: block;
+        padding: 1rem 7rem;
+    }
+
+    .mobile-menu .login-button button {
+        width: 100%;
+    }
+
+    .open{
+        display: block;
+    }
+
+
+    .top-site{
+        padding: 9%;
+    }
+    
+    .interface{
+        justify-content: center;
+    }
+    
+    .flex{
+        flex-direction: column-reverse;
+        padding: 5%;
+    }
+    
+    .txt-top-site{
+        width: auto;
+    }
+
+    .img-top-site{
+        justify-content: center;
+    }
+
+  
+}
+
+
+/*Final Stile Header*/
+
+
+
+
+/*Beginning Stile Main*/
+
+.img-top-site img {
+    width: auto;
+    height: 480px;
+    border-radius: 30px 10px 30px 10px;
+  }
+
+section.top-site {
+    padding: 40px 4%;
+}
+
+section.top-site .flex {
+    align-items: center;
+    justify-content: space-between;
+    gap: 90px;
+}
+
+
+.top-site h1 {
+    color: var(--color-font-primary-main);
+    font-size: 30px;
+    line-height: 40px;
+}
+
+.top-site .txt-top-site h1 span {
+    color:#496a9c;
+}
+
+.top-site .txt-top-site p{
+    font-family: var(--font-segundery);
+}
+
+
+
+/*Não mexa nessa parte*/
+/*Don't touch this part*/
+section.top-site h1, section.top-site p {
+    margin: 0 0 20px 0; /* Define margens específicas para o h1 e p */
+}
+/*Don't touch this part*/
+/*Não mexa nessa parte*/
+
+/*Fianl Stile Main*/
+
+
+
+/*Style Destaque*/
+
+/* Container flexível para alinhar os .servico-box lado a lado */
+section.top-site {
+    display: flex;
+    justify-content: space-around; /* Espaçamento uniforme entre os blocos */
+    align-items: flex-start;
+    flex-wrap: wrap;               /* Para quebrar linha em telas pequenas */
+    gap: 20px;                     /* Espaçamento entre os itens */
+    margin: 20px 0;
+  }
+  
+  /* Estilos para a classe .servico-box */
+  .servico-box {
+    display: flex;
+    flex-direction: column;       /* Ícones em cima do texto */
+    align-items: center;          /* Centraliza ícones e textos */
+    text-align: center;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 250px;                 /* Largura consistente para os blocos */
+    flex: 1;                      /* Permite que os blocos cresçam uniformemente */
+  }
+  
+  .servico-box img {
+    width: 50px;                  /* Tamanho dos ícones */
+    height: 50px;
+    margin-bottom: 10px;          /* Espaço entre ícone e texto */
+  }
+  
+  .servico-box h3 {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 8px;
+  }
+  
+  .servico-box p {
+    font-size: 14px;
+    color: #666;
+  }
+  
+
+section.destaque {
+    padding: 40px 4%;
+} 
+
+
+section.servico{
+    background-color: var(--color-back-destaque);
+}
+
+.servico .servico-box{
+    color: var(--color-icon-destaque);
+    padding: 70px;
+    gap: 60px;
+}
+
+.servico .servico-box i{
+    font-size: 55px;
+    color: #467548;
+}
+
+
+.destaque-secundary{
+   color: var(--color-font-sec-destaque);
+}
+
+
+/*Beginning Stile footer*/
+.rodape {
+    background-color: var(--color-reader);
+    color: var(--color-font-reader);
+    padding: 24px;
+    text-align: center;
+    font-family:   var(--font-segundery);
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
