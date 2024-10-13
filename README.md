@@ -99,6 +99,7 @@ Google Fonts: Utilização das fontes "Krona One" e "Montserrat" para melhorar a
 Estrutura de Diretórios
 
 gorge-farm-website/
+
 │
 
 ├── assets/
