@@ -40,37 +40,8 @@ h2.titulo {
     padding: 20px;
 }
 
-header {
-    background-color: var(--color-primary);
-    padding: 15px 30px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
 
-.menu_list ul {
-    display: flex;
-    list-style: none;
-}
 
-.nav-item {
-    margin: 0 20px;
-}
-
-.nav-link {
-    color: white;
-    text-decoration: none;
-    font-size: 1rem;
-}
-
-.login-button button {
-    background-color: var(--color-button);
-    color: var(--color-button-text);
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
 
 .main {
     flex-grow: 1;
@@ -154,42 +125,22 @@ footer {
     padding: 10px;
 }
 
-/* Responsividade */
-@media (max-width: 768px) {
-    .produtos {
-        flex-direction: column;
-        gap: 40px;
-    }
 
-    .header_menu {
-        flex-direction: column;
-        text-align: center;
-    }
 
-    .menu_list ul {
-        flex-direction: column;
-        gap: 10px;
-    }
 
-    .login-button {
-        margin-top: 10px;
-    }
-}
-
-/* Estilo para as imagens da loja (store) */
 .store img {
-    width: 300px;  /* Define uma largura fixa para as imagens */
-    height: 300px; /* Define uma altura fixa para as imagens */
-    object-fit: cover; /* Garante que as imagens se ajustem sem distorção */
-    object-position: center; /* Centraliza a imagem dentro do container */
-    border-radius: 5px; /* Adiciona cantos arredondados (opcional) */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adiciona uma leve sombra para destacar as imagens */
+    width: 300px;  
+    height: 300px; 
+    object-fit: cover; 
+    object-position: center; 
+    border-radius: 5px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
   }
   
-  /* Para telas menores, ajusta o tamanho das imagens */
+
   @media (max-width: 768px) {
     .store img {
-      width: 100%; /* Em telas menores, as imagens ocupam toda a largura disponível */
-      height: auto; /* Remove a altura fixa para manter a proporção */
+      width: 100%; 
+      height: auto;
     }
   }
