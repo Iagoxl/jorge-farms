@@ -1,40 +1,80 @@
 function menuShow() {
     let menuMobile = document.querySelector('.mobile-menu');
-    if (menuMobile.classList.contains('open')) {
-        menuMobile.classList.remove('open');
-        
-    } else {
-        menuMobile.classList.add('open');
-    }
+    menuMobile.classList.toggle('open');
+}
+
+function toggleCartPopup() {
+    const cartPopup = document.getElementById('cartPopup');
+    cartPopup.classList.toggle('open');
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    let subtotal = 0;
+    let cart = [];
     const addToCartButtons = document.querySelectorAll('.add-to-cart');
-    const removeFromCartButtons = document.querySelectorAll('.remove-from-cart');
+    const cartItemsContainer = document.getElementById('cartItems');
     const subtotalDisplay = document.getElementById('subtotal');
 
-    // Função para atualizar o subtotal exibido
-    function updateSubtotal() {
+    // Atualiza o subtotal e os itens do carrinho no popup
+    function updateCartDisplay() {
+        cartItemsContainer.innerHTML = '';
+        let subtotal = 0;
+
+        cart.forEach(item => {
+            const total = item.price * item.quantity;
+            subtotal += total;
+
+            const cartItem = document.createElement('div');
+            cartItem.classList.add('cart-item');
+            cartItem.innerHTML = `
+                <p>${item.name} (R$ ${item.price.toFixed(2).replace('.', ',')})</p>
+                <div class="quantity-controls">
+                    <button onclick="decreaseQuantity('${item.name}')">-</button>
+                    <span>${item.quantity}</span>
+                    <button onclick="increaseQuantity('${item.name}')">+</button>
+                </div>
+                <p>Total: R$ ${total.toFixed(2).replace('.', ',')}</p>
+            `;
+            cartItemsContainer.appendChild(cartItem);
+        });
+
         subtotalDisplay.textContent = subtotal.toFixed(2).replace('.', ',');
     }
 
-    // Função para adicionar ao carrinho
+    // Funções de controle de quantidade
+    window.increaseQuantity = (productName) => {
+        const product = cart.find(item => item.name === productName);
+        if (product) {
+            product.quantity += 1;
+            updateCartDisplay();
+        }
+    };
+
+    window.decreaseQuantity = (productName) => {
+        const product = cart.find(item => item.name === productName);
+        if (product && product.quantity > 1) {
+            product.quantity -= 1;
+            updateCartDisplay();
+        } else {
+            cart = cart.filter(item => item.name !== productName);
+            updateCartDisplay();
+        }
+    };
+
+    // Adiciona um produto ao carrinho
     addToCartButtons.forEach(button => {
         button.addEventListener('click', () => {
-            const productPrice = parseFloat(button.previousElementSibling.textContent.replace('R$ ', '').replace(',', '.'));
-            subtotal += productPrice;
-            updateSubtotal();
-        });
-    });
+            const productName = button.getAttribute('data-name');
+            const productPrice = parseFloat(button.getAttribute('data-price'));
+            const existingProduct = cart.find(item => item.name === productName);
 
-    // Função para remover do carrinho
-    removeFromCartButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            const productPrice = parseFloat(button.previousElementSibling.previousElementSibling.textContent.replace('R$ ', '').replace(',', '.'));
-            subtotal -= productPrice;
-            if (subtotal < 0) subtotal = 0; // Evitar subtotal negativo
-            updateSubtotal();
+            if (existingProduct) {
+                existingProduct.quantity += 1;
+            } else {
+                cart.push({ name: productName, price: productPrice, quantity: 1 });
+            }
+
+            updateCartDisplay();
+            toggleCartPopup();
         });
     });
 });
