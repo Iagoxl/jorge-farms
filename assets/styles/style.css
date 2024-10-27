@@ -390,7 +390,7 @@ section.servico{
 }
 
 .signup-btn {
-    text-transform: uppercase;
+    text-decoration: none;
     border: none;
     margin: 3px;
     width: 100%;
@@ -402,6 +402,9 @@ section.servico{
     font-size: 1.2rem;
     cursor: pointer;
     text-transform: uppercase;
+}
+.login{
+    text-decoration: none; 
 }
 
 .signup-btn:hover {
@@ -448,6 +451,7 @@ section.servico{
 }
 
 .submit-btn {
+      
     background-color: var(--color-button-login);
     color: var(--color-font-button-menu);
     padding: 12px;
