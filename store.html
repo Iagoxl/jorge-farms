@@ -6,6 +6,7 @@
     <title>Página de Compras</title>
     <link rel="stylesheet" href="assets/styles/store.css">
     <link rel="stylesheet" href="assets/styles/style.css">
+    <link rel="icon" href="assets/img/Logo/logo_jorge.png">
     <script src="assets/js/store.js"></script>
 </head>
 <body>
@@ -27,7 +28,7 @@
             </div>
 
             <div class="login-button">
-                <button><a href="manutencao.html">Login</a></button>
+                <button><a href="ca">Login</a></button>
             </div>
 
             <div class="mobile-menu-icon">
@@ -50,41 +51,41 @@
     </header>
 
     <main>
-        <section class="catalogo">
-            <h2 class="titulo">Produtos em Destaque</h2>
-            <div class="produtos flex">
-                <div class="produto">
-                    <img src="assets/img/store/cenoura.jpg" alt="Cenoura">
-                    <h3>Cenoura</h3>
-                    <p>R$ 10,00</p>
-                    <button class="add-to-cart">Adicionar ao Carrinho</button>
-                    <button class="remove-from-cart">Remover do Carrinho</button>
+        <main>
+            <section class="catalogo">
+                <h2 class="titulo">Produtos em Destaque</h2>
+                <div class="produtos flex">
+                    <div class="produto">
+                        <img src="assets/img/store/cenoura.jpg" alt="Cenoura">
+                        <h3>Cenoura</h3>
+                        <p>R$ 10,00</p>
+                        <button class="add-to-cart" data-name="Cenoura" data-price="10.00">Adicionar ao Carrinho</button>
+                    </div>
+                    <div class="produto">
+                        <img src="assets/img/store/alface.jpg" alt="Alface">
+                        <h3>Alface</h3>
+                        <p>R$ 15,00</p>
+                        <button class="add-to-cart" data-name="Alface" data-price="15.00">Adicionar ao Carrinho</button>
+                    </div>
+                    <div class="produto">
+                        <img src="assets/img/store/tomate.jpeg" alt="Tomate">
+                        <h3>Tomate</h3>
+                        <p>R$ 20,00</p>
+                        <button class="add-to-cart" data-name="Tomate" data-price="20.00">Adicionar ao Carrinho</button>
+                    </div>
                 </div>
-                <div class="produto">
-                    <img src="assets/img/store/alface.jpg" alt="Alface">
-                    <h3>Alface</h3>
-                    <p>R$ 15,00</p>
-                    <button class="add-to-cart">Adicionar ao Carrinho</button>
-                    <button class="remove-from-cart">Remover do Carrinho</button>
-                </div>
-                <div class="produto">
-                    <img src="assets/img/store/tomate.jpeg" alt="Tomate">
-                    <h3>Toamte</h3>
-                    <p>R$ 20,00</p>
-                    <button class="add-to-cart">Adicionar ao Carrinho</button>
-                    <button class="remove-from-cart">Remover do Carrinho</button>
-                </div>
-
-            </div>
-        </section>
-
-        <section class="finalizar-compra">
-            <h2 class="titulo">Finalizar Compra</h2>
-            <div class="resumo-compra">
+            </section>
+    
+            <!-- Popup lateral do carrinho -->
+            <div class="cart-popup" id="cartPopup">
+                <h2>Carrinho</h2>
+                <div id="cartItems"></div>
                 <p>Subtotal: R$ <span id="subtotal">0,00</span></p>
-                <a href="manutencao.html"><button class="finalizar-button">Finalizar Compra</button></a>
+                <button class="finalizar-button">Finalizar Compra</button>
+                <button class="close-cart" onclick="toggleCartPopup()">Fechar</button>
             </div>
-        </section>
+        </main>
+    
     </main>
 
     <footer class="rodape">
