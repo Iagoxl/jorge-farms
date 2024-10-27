@@ -99,24 +99,15 @@ Google Fonts: Utilização das fontes "Krona One" e "Montserrat" para melhorar a
 Estrutura de Diretórios
 
 gorge-farm-website/
-
 │
-
 ├── assets/
-
 │   ├── img/               # Imagens utilizadas no projeto
-
 │   ├── styles/            # Arquivos CSS
-
 │   └── js/                # Arquivos JavaScript
-
 │
 ├── index.html             # Página principal
-
 ├── store.html             # Página da loja online
-
 └── README.md              # Documentação do projeto
-
 
 Responsividade
 O site é totalmente responsivo, ajustando-se a diferentes tamanhos de tela. Para telas menores, como celulares e tablets, o menu de navegação se transforma em um menu hambúrguer para melhor experiência do usuário.

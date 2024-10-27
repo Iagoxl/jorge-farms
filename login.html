@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Jorge Farm's</title>
+    <link rel="stylesheet" href="assets/styles/style.css">
+    <script src="assets/js/script.js"></script>
+    <!--BOOTSTRAP ICONS-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<body>
+
+    <header>
+        <nav class="header_menu">
+            <div class="header_logo">  
+                <a href="index.html">
+                    <img class="img" src="assets/img/Logo/logo_jorge.png" alt="logoSite">
+                </a>
+            </div>
+            <div class="menu_list">
+                <ul>
+                    <li class="nav-item"><a href="index.html" class="nav-link">Início</a></li>
+                    <li class="nav-item"><a href="manutencao.html" class="nav-link">Sobre</a></li>
+                    <li class="nav-item"><a href="store.html" class="nav-link">Mercado Online</a></li>
+                    <li class="nav-item"><a href="manutencao.html" class="nav-link">Contato</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="login-section">
+            <div class="interface">
+                    <form class="login-form" action="login_process.html" method="post">
+                    <div class="form-group">
+                        <label for="email">E-mail:</label>
+                        <input type="email" id="email" name="email" required placeholder="Digite seu e-mail">
+                    </div>
+                    <div class="form-group">
+                        <label for="senha">Senha:</label>
+                        <input type="password" id="senha" name="senha" required placeholder="Digite sua senha">
+                    </div>
+                    <button type="submit" class="submit-btn">Entrar</button>
+        </section>
+    </main>
+
+    <footer class="rodape">
+        Desenvolvido por Iago Ximenes.
+    </footer>
+
+</body>
+</html>
