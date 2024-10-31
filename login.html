@@ -34,7 +34,7 @@
     <main>
         <section class="login-section">
             <div class="interface">
-                    <form class="login-form" action="login_process.html" method="post">
+                <form id="login-form">
                     <div class="form-group">
                         <label for="email">E-mail:</label>
                         <input type="email" id="email" name="email" required placeholder="Digite seu e-mail">
@@ -44,8 +44,12 @@
                         <input type="password" id="senha" name="senha" required placeholder="Digite sua senha">
                     </div>
                     <button type="submit" class="submit-btn">Entrar</button>
+                </form>
+                <div id="login-message"></div> <!-- Mensagem de status -->
+            </div>
         </section>
     </main>
+
 
     <footer class="rodape">
         Desenvolvido por Iago Ximenes.
